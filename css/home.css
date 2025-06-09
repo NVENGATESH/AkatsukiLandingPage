@@ -215,7 +215,7 @@ p{
  .background-video {
       width: 100%;
       padding-right: 1500px;
-      transform: translatex(-300px);
+      transform: translatex(-350px);
       height: auto;
       background-position: left;
       object-fit: contain;
@@ -463,10 +463,11 @@ font-size: 25px;
       padding: 10px;
     }
     .introductioncontentcontainer{
-padding: 10px;
+     padding: 10px;
     }
      .introductioncontentcontainer h1 {
     font-size: 28px;
+    text-align: center;
   }
 
   .introductioncontentcontainer p {
@@ -479,6 +480,10 @@ padding: 10px;
   text-align: justify;
   line-height: 1.8;
   letter-spacing: 1px;
+}
+
+.introductionsectioncontainer {
+  padding: 10px;
 }
   }
 
@@ -2350,7 +2355,7 @@ form button{
 
  @media (min-width:320px) and (max-width:480px){
   .contactsectioncontainer{
-width: 380px;
+width: 360px;
 padding: auto;
   }
 form{
@@ -2384,7 +2389,7 @@ width: 80%;
 .footer{
     width: 100%;
 min-height: 80px;
-padding: 30px 20px ;
+padding: 30px 0px ;
 
 background-color:#2b3952 ;
 color: white;
@@ -2396,6 +2401,12 @@ color: white;
     display: flex;
 justify-content: center;
 align-items: center;
+}
+
+@media (min-width:320px) and (max-width:480px){
+.footerconatiner h3{
+font-size: 13px;
+}
 }
 
 

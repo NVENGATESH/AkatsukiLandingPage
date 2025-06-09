@@ -1,0 +1,2375 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Margarine&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Titles';  /* 1. Give it a custom name */
+    src: url('/font/go3v2.ttf') format('truetype');  /* 2. Path to your font */
+    font-weight: 800;  /* 3. You can also define font weight */
+    font-style: normal;   /* 4. And font style */
+  }
+
+@font-face {
+    font-family: 'membercontentbarfont';  /* 1. Give it a custom name */
+    src: url('/font/JMH\ Typewriter.ttf') format('truetype');  /* 2. Path to your font */
+    font-weight: 0;  /* 3. You can also define font weight */
+    font-style: normal;   /* 4. And font style */
+  }
+
+:root{
+
+ /* ------font family------ */
+ --ff-primery:"Roboto", sans-serif;
+ --ff-secondary:"Inter", sans-serif;
+ --ff-desighn:"Satisfy", cursive;
+ --ff-brand:"Margarine", sans-serif;
+ 
+
+}
+
+a{
+    text-decoration: none;
+}
+p{
+    font-family: var(--ff-desighn);
+}
+
+/* body{
+    font-family: 'Titles', sans-serif;
+} */
+
+
+
+
+
+
+/* Nav bar start */
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .5rem 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    background-color: #121828;
+}
+
+
+.navlogoconstructor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navlogoconstructor  img{
+    width: 60px;
+    height: 60px;
+     
+}
+
+.navlogoconstructor .logoname{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Titles', sans-serif;
+}
+
+
+
+.navbar a{
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+#check{
+    display: none;
+}
+
+.icons {
+    font-size: 2.5rem;
+    position: absolute;
+    right: 5%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+/* Nav Bar Responsive */
+
+@media (max-width:992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width:768px){
+    .icons{
+        display: inline-flex;
+    }
+    #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+       
+        
+    }
+
+    #check:checked~.navbar{
+        height: 17.7rem;
+    }
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        opacity: 0;
+        transform: translatey(-50px);
+        transition: .3s ease;
+      
+    
+    }
+
+    #check:checked~.navbar a{
+        opacity: 1;
+        transform: translatey(0px);
+        transition-delay: calc(.15s * var(--i));
+    }
+}
+
+
+/* navabar end */
+
+
+
+
+
+/* homesection   start*/
+
+.homesection{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(32, 119, 153);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 80px;
+   
+}
+
+
+.homevidiocontainer{
+    width: 100%;
+    height: 100%;
+}
+.background-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    text-align: center;
+    z-index: 1;
+   
+}
+
+
+
+  /* Responsive heder vidio */
+  @media (min-aspect-ratio: 16/9) {
+    .background-video {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .background-video {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+
+
+
+  /* homecontentconatiner */
+
+
+  .homecontentconatiner{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+    gap: 30px;
+   
+    z-index: 2;
+    text-align: center;
+  }
+  .homecontentconatiner>h1{
+    font-size: 70px;
+    color: rgb(226, 15, 15);
+    text-shadow: 
+    0px 0px 10px black,
+    0px 0px 20px black ,
+    0px 0px 40px black ,
+    0px 0px 100px black,
+    0px 0px 120px black
+    
+    ;
+    font-family: 'Titles', sans-serif;
+    letter-spacing: 4px;
+  }
+
+  .homecontentconatiner>h3{
+    font-size: 40px;
+    color: rgb(226, 15, 15);
+    font-family: var(--ff-brand);
+    text-shadow: 
+    0px 0px 10px black,
+    0px 0px 20px black ,
+    0px 0px 40px  black,
+    0px 0px 100px black,
+    0px 0px 120px black 
+    ;
+  }
+
+  .homecontentconatiner>button{
+   padding: 10px 15px;
+   border: none;
+   color: #fff;
+   border-radius: 18px;
+   width: 40%;
+   text-align: center;
+   background-color: rgb(226, 15, 15);
+   box-shadow: 0px 0px 40px red, 
+   0px 0px 60px red inset, 
+   0px 0px 80px red inset, 
+   0px 0px 120px wheat inset;
+   font-family: 'Titles', sans-serif;
+   font-size: 25px;
+   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+    .homecontentconatiner>button a{
+color: white;
+  }
+
+/* Respovive */
+  @media (min-width:320px) and (max-width:480px){
+    .homecontentconatiner{
+width: 95%;
+top: 240px;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    top: 60px;
+   
+
+
+    }
+     .homecontentconatiner>h1{
+      font-size:40px;
+     }
+       .homecontentconatiner>h3{
+        font-size: 25px;
+       }
+       
+  .homecontentconatiner>button{
+    padding: 10px 15px;
+   border: none;
+   color: #fff;
+   border-radius: 18px;
+   width: 100%;
+  }
+}
+ @media (min-width:480px) and (max-width:560px){
+
+    .homecontentconatiner{
+      width: 80%;
+top: 80px;
+    }
+ .homecontentconatiner>h3 {
+font-size: 20px;
+  }
+   .homecontentconatiner>button{
+    padding: 10px 5px;
+   border: none;
+   color: #fff;
+   border-radius: 18px;
+   width: 100%;
+   font-size: 18px
+  }
+
+ }
+
+@media (max-width:1100px){
+ .homecontentconatiner>button{
+    padding: 10px 5px;
+   border: none;
+   color: #fff;
+   border-radius: 18px;
+   width: 60%;
+   font-size: 20px
+  }
+  .homecontentconatiner>h3 {
+font-size: 25px;
+  }
+}
+  /* Introduction Section  start*/
+.introductionsection {
+  width: 100%;
+  min-height: 80vh;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+.introductionsectioncontainer {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+}
+
+.introductioncontentcontainer {
+  flex: 1 1 500px;
+  min-width: 300px;
+}
+
+.introductioncontentcontainer h1 {
+  font-family: 'Titles', sans-serif;
+  font-size: 60px;
+  margin-bottom: 40px;
+  /* margin-top: -120px; */
+}
+
+.introductioncontentcontainer p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: justify;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+.introductionimagecontainer {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.introductionimagecontainer img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  max-height: 500px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+  .introductionsectioncontainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .introductioncontentcontainer h1 {
+    font-size: 36px;
+  }
+
+  .introductioncontentcontainer p {
+    font-size: 24px !important;
+    line-height: 1.6;
+  }
+
+  .introductionimagecontainer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .introductionimagecontainer img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}
+
+
+  @media (min-width:320px) and (max-width:480px){
+    .introductionsection {
+      padding: 10px;
+    }
+    .introductioncontentcontainer{
+padding: 10px;
+    }
+     .introductioncontentcontainer h1 {
+    font-size: 28px;
+  }
+
+  .introductioncontentcontainer p {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+.introductioncontentcontainer p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: justify;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+  }
+
+
+   /* Introduction Section  end*/
+
+
+   .membersection{
+    width: 100%;
+    min-height: 100vh;
+    background-color:#2b3952 ;
+    padding: 20px;
+    padding-bottom: 30px;
+    overflow: hidden;
+   }
+   .membersectionconatiner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+
+   }
+    .membersectionconatiner >h1{
+  font-size: 55px;
+    color: #fff;
+    }
+   .membersectionconatiner h1{
+    font-family: 'Titles', sans-serif;
+ 
+   }
+
+   .memberscontainer{
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+   }
+   
+
+  
+   .members:hover .memberimgcontainer img {
+    transform: translateY(-80px);
+    filter:drop-shadow(0px 0px 2px rgb(255, 0, 119));
+     transition: 0.3s all;
+    
+     
+   }
+   .members:hover h1 {
+    transform: scale(1.5);
+    transition: 0.3s all;
+    filter: drop-shadow(0px 0px 2px rgb(255, 0, 119));
+}
+
+
+
+   .members{
+    height: 250px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.2); 
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) inset;
+
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    z-index: 3;
+  
+    margin: 10px;
+    border: 3px solid #fff;
+   }
+   .memberimgcontainer{
+    width: 100%;
+    height: 100%
+    
+   }
+   .memberimgcontainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+   }
+.members h1{
+color: #fff;
+}
+  
+
+   .akatsukiimagebackroundfilleritems{
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+     opacity: 0.2;
+   }
+   .memberbackroundfilter1{
+    top: 10;
+    left: -4%;
+   }
+
+   .memberbackroundfilter2{
+    top: 18%;
+    left: 14%;
+   }
+   .memberbackroundfilter3{
+    top: 18%;
+    left: 54%;
+   }
+
+   .memberbackroundfilter4{
+    top: -15%;
+    left: 70%;
+   }
+   .memberbackroundfilter5{
+    top: 28%;
+    left: 90%;
+   }
+   .memberbackroundfilter6{
+    top: 80%;
+    left: 5%;
+   }
+   .memberimgcontainer6 img{
+    transform: translateY(10px);
+   }
+   .memberbackroundfilter7{
+    top: 85%;
+    left: 25%;
+   }
+
+   .memberbackroundfilter8{
+    top: 90%;
+    left: 53%;
+   }
+   .memberbackroundfilter9{
+    top: 88%;
+    left: 89%;
+
+   }
+   .member6 h1{
+    margin-top: 9px;
+   }
+
+
+
+
+
+
+
+   /* loresection  start*/
+
+
+   .loresection{
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: lab(0 0 10%);
+    color: #fff;
+    padding-top: 40px;
+   }
+   .loresectionconatiner{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+   justify-content: center;
+   align-items: center;
+
+   }
+.loresectionconatiner h1{
+    font-family: 'Titles', sans-serif;
+    font-size: 65px;
+}
+
+   /* legasi start */
+   .akatsukilegasiconatiner{
+    width: 85%;
+    height: 80%;
+    padding: 30px;
+ 
+    margin: 20px auto;
+   }
+   .akatsukilegasiconatiner img{
+    max-width: 600px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    float: left;
+    margin-right: 40px;
+   }
+
+
+  @media (min-width:320px) and (max-width:600px){
+    .loresection {
+      padding: 10px;
+    }
+    .akatsukilegasiconatiner {
+      width: 90%;
+      padding: 5px;
+      margin: 5px;
+
+    }
+    .loresectionconatiner h1{
+font-size: 35px;
+margin-top: 10px;
+    }
+   .legasy-text-box h1 {
+margin-top: 15px !important;
+margin-bottom: 25px !important;
+font-size: 25px;
+    }
+       .akatsukilegasiconatiner img{
+        margin: 0px !important;
+         margin-bottom: 10px;
+
+     width: 100%;
+
+    
+       float: none; /* Use 'none' instead of 'unset' for better compatibility */
+    display: block;
+   
+       }
+
+     }
+     @media (max-width: 965px) {
+ .akatsukilegasiconatiner img {
+  float: none;
+  width: 100%;
+  margin-bottom: 30px;
+ }
+     }
+@media (max-width: 768px) {
+  .akatsukilegasiconatiner img {
+    width: 100%;
+    /* max-width: 300px; */
+    height: auto;
+    float: none; /* Use 'none' instead of 'unset' for better compatibility */
+    display: block;
+    margin: 0 auto; /* Optional: centers the image horizontally */
+  }
+ .akatsukiformationconatiner img{
+  
+    width: 100%;
+    /* max-width: 300px; */
+    /* height: auto; */
+    float: none; /* Use 'none' instead of 'unset' for better compatibility */
+    display: block;
+    margin: 0 auto; 
+     
+
+  
+   }
+    .akatsukigoalsconatiner img{
+
+    width: 100%;
+    /* max-width: 300px; */
+    height: auto;
+    float: none;
+    display: block;
+    margin: 0px !important; 
+
+   }
+   
+}
+
+   .legasy-text-box{
+    color: #fff;
+   }
+
+   .legasy-text-box h1{
+    font-size: 25px;
+    margin: 0px auto 20px auto;
+    font-family: 'Titles', sans-serif;
+   }
+   .legasy-text-box p{
+    font-size: 25px;
+    text-align: justify;
+    line-height: 35px;
+   }
+   @media (max-width: 1005px) {
+   .akatsukigoalsconatiner img{
+  float: none;
+  width: 100%;
+  margin-bottom: 30px;
+ }
+ .formation-text-box h1{
+  margin-top: 30px;
+ }
+}
+    /* legasi end */
+
+
+
+
+    
+ /* Formation of Akkatsuki start  */
+
+
+
+
+
+   /* formation start */
+   .akatsukiformationconatiner{
+    width: 85%;
+    height: 50%;
+    padding: 30px;
+    
+    margin: 10px auto;
+   }
+   .akatsukiformationconatiner img{
+  
+    max-width: 600px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    float: right;
+    margin-left: 40px;
+
+  
+   }
+   .formation-text-box{
+   
+    color: #fff;
+    
+   }
+
+   .formation-text-box h1{
+    font-size: 25px;
+    margin: 0px auto 20px auto;
+    font-family: 'Titles', sans-serif;
+   }
+   .formation-text-box p{
+    font-size: 25px;
+    text-align: justify;
+    line-height: 38px;
+   }
+ 
+
+/* Responsive */
+     @media (min-width:320px) and (max-width:600px){
+.akatsukiformationconatiner {
+margin: 5px;
+padding: 10px;
+width: 95%;
+}
+.formation-text-box h1 {
+ margin-top: 25px !important;
+}
+.akatsukiformationconatiner img {
+margin-bottom: 15px !important;
+width: 100%;
+}
+
+     }
+/* Formation of Akkatsuki end  */
+
+
+
+
+/* Akatsuki Goals start  */
+.akatsukigoalsconatiner{
+    width: 85%;
+    height: 80%;
+    padding: 30px;
+
+    margin: 20px auto;
+   }
+   .akatsukigoalsconatiner img{
+    max-width: 600px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    float: left;
+    margin-right: 40px;
+   }
+   .goals-text-box{
+    color: #fff;
+   }
+
+   .goals-text-box h1{
+    font-size: 25px;
+    margin: 0px auto 20px auto;
+    font-family: 'Titles', sans-serif;
+   }
+   .goals-text-box p{
+    font-size: 25px;
+    text-align: justify;
+    line-height: 35px;
+   }
+
+
+   /* Responsive */
+     @media (min-width:320px) and (max-width:580px){
+.akatsukigoalsconatiner {
+width: 95%;
+padding: 10px;
+margin: 5px;
+
+}
+.akatsukigoalsconatiner img {
+margin-bottom: 15px !important;
+}
+
+
+     }
+
+
+ /* Akatsuki Goals end  */
+
+ 
+   /* loresection  start*/
+
+
+
+
+
+
+
+   /* Galery start  */
+
+.galerysection{
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color:#2b3952 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.galerysectionconatiner{
+    width: 90%;
+    height: 100%;
+    text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   position: relative;
+   /* background-color: #fff; */
+
+}
+.galerysectionconatiner h1{
+    font-family: 'Titles', sans-serif;
+    margin: 10px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #fff;
+}
+.galerycontainer {
+  
+
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr,auto);
+    grid-auto-rows: 150px; 
+    gap:3px;
+z-index: 2;
+
+    grid-template-areas: "galery1s galery2s galery3s"
+                          "galery1s galery4s galery3s"
+                          "galery1s galery4s galery3s"
+                          "galery6s galery7s galery5s"
+                          "galery8s galery7s galery5s"
+                         
+                            "galery8s galery7s galery5s"
+                             "galery8s galery7s galery9s"
+                              "galery8s galery10s galery9s"
+           
+       ;
+
+
+/* 
+       grid-template-areas: "galery1s galery2s galery3s"
+       "galery1s galery4s galery3s"
+       "galery1s galery4s galery3s"
+       "galery1s galery4s galery5s"
+       "galery6s galery7s galery5s"
+       "galery8s galery7s galery5s"
+        "galery8s galery7s galery5s"
+         "galery8s galery7s galery5s"
+          "galery8s galery7s galery9s"
+           "galery8s galery10s galery9s"
+
+; */
+}
+.gallery{
+   
+    
+    /* background-color: blueviolet; */
+    border-radius: 20px;
+    margin: 5px;
+    border: 3px solid #fff;
+  
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+
+ 
+}
+.gallery img{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 20px;
+    object-fit: cover; 
+    overflow: hidden;
+    background-color: #000;
+    
+}
+.galery6 img{
+
+object-fit: contain;
+}
+.galery7 img{
+
+object-fit: contain;
+
+}
+.galery1  {
+     grid-area: galery1s;
+    
+    }
+.galery2  { 
+    
+    grid-area: galery2s;
+
+  
+ 
+
+}
+.galery2 img{
+    /* position: absolute;
+  bottom: 1px;
+  transform: translateY(-10px);
+      left: 0;
+     text-align: center;
+     object-fit: cover; */
+}
+.galery3  { 
+    grid-area: galery3s;
+
+}
+.galery4  { 
+    grid-area: galery4s;
+ }
+ .galery4 img{
+    /* position: absolute;
+  bottom: 1px;
+  transform: translateY(240px);
+      left: 0;
+     text-align: center;
+     object-fit: cover; */
+}
+.galery5  { 
+    grid-area: galery5s;
+ }
+ 
+.galery6  {
+     grid-area: galery6s; 
+    }
+     .galery6 img{
+    /* position: absolute;
+  bottom: 1px;
+  transform: translateY(300px);
+      left: 0;
+     text-align: center;
+     object-fit: cover; */
+}
+.galery7  { 
+    grid-area: galery7s;
+ }
+.galery8  { 
+    grid-area: galery8s; 
+}
+.galery9  { 
+    grid-area: galery9s;
+ }
+.galery10 {
+     grid-area: galery10s; 
+    }
+
+         .galery9 img{
+    /* position: absolute;
+  bottom: 1px;
+  transform: translateY(250px);
+      left: 0;
+     text-align: center;
+     object-fit: cover; */
+}
+
+     .galery10 img{
+    /* position: absolute;
+  bottom: 1px;
+  transform: translateY(250px);
+      left: 0;
+     text-align: center;
+     object-fit: cover; */
+}
+.gallery:hover img {
+  transform: scale(1.1);
+  object-fit: cover;
+   transition: 0.3s all;
+  
+}
+
+
+
+    /* 
+     */
+     .galerbacfiler{
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        /* z-index: 2555; */
+          z-index: 0;
+     opacity: 0.3;
+       
+     }
+       .backroundimg1{
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+     opacity: 1;
+     overflow: hidden;
+   }
+   .backroundimg1 img{
+    opacity: 1;
+   }
+   .galerbacfiler1{
+  top: 30px;
+  left: 1170px;
+   }
+     .galerbacfiler2{
+  top: 1100px;
+  left: 1170px;
+   }
+     .galerbacfiler3{
+  top: 100px;
+  left: 300px;
+   }
+   .galerbacfiler4{
+  top: 110px;
+  left: 710px;
+   }
+
+      .galerbacfiler5{
+  top: 420px;
+  left: 730px;
+   }
+
+    .galerbacfiler6{
+  top: 35px;
+  left: -130px;
+   }
+    .galerbacfiler7{
+  top: 420px;
+  left: 1170px;
+   }
+
+ .galerbacfiler8{
+  top: 420px;
+  left: 300px;
+   }
+
+    .galerbacfiler9{
+  top: 570px;
+  left: -150px;
+   }
+
+    .galerbacfiler10{
+  top: 570px;
+  left: 260px;
+   }
+      .galerbacfiler11{
+  top: 1030px;
+  left: 300px;
+   }
+
+        .galerbacfiler12{
+ top: 1020px;
+  left: 730px;
+   }
+          .galerbacfiler13{
+  top: 870px;
+  left: 750px;
+   }
+
+            .galerbacfiler14{
+ top: 870px;
+  left: 1160px;
+   }
+
+            .galerbacfiler15{
+ top: 1160px;
+  left: 300px;
+   }
+
+
+            .galerbacfiler16{
+  top: 1160px;
+  left:730px
+   }
+
+               .galerbacfiler17{
+  top: 1100px;
+  left: -150px;
+   }
+
+   
+               .galerbacfiler18{
+  top: 900px;
+  left: -230px;
+   }
+                .galerbacfiler19{
+  top: -60px;
+  left: -240px;
+   }
+
+
+ @media (min-width:320px) and (max-width:550px){
+  .galerycontainer {
+ overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(320px, 1fr);
+    grid-auto-rows: 120px; 
+      grid-auto-columns: 180px; 
+    gap:3px;
+z-index: 2;
+  grid-template-areas: "galery1s galery2s "
+                          "galery1s galery2s "
+                          "galery1s galery3s "
+                          "galery4s galery3s"
+                          "galery4s galery5s"
+                         
+                            "galery6s galery5s "
+                             "galery6s galery5s"
+                              "galery7s galery8s"
+                              "galery9s galery8s"
+                              "galery9s galery8s"
+                              "galery9s galery10s"
+           
+       ;
+
+
+
+  }
+  .gallery img{
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover; 
+    overflow: hidden;
+    background-color: #000;
+    
+}
+ .galery6 img{
+object-fit: contain;
+ }
+ }
+
+/* Galery end  */
+
+
+
+/* Card Desighn */
+
+
+.carddesighnsection{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px auto;
+}
+.carddesighnsectioncontainer h1{
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+        font-family: 'Titles', sans-serif;
+    margin-bottom: 30px;
+    font-size: 35px;
+
+}
+.carddesighnsectioncontainer{
+    width:100%;
+    height: 100%;
+    
+}
+.animecardcontainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+
+.animecard{
+    width: 320px;
+    height: 420px;
+    background-color: black;
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:30px  20px;
+
+    text-align: center;
+    gap: 20px;
+    position: relative;
+    margin: 10px;
+
+}
+.animeimgcontainer{
+    width: 200px;
+    height: 200px;
+}
+.animeimgcontainer6,.animeimgcontainer10,.animeimgcontainer9{
+    width: 180px !important;
+    height: 200px !important;
+}
+
+.animeimgcontainer6,.animeimgcontainer10,.animeimgcontainer9 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.animeimgcontainer img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain; */
+    
+}
+.animecard button{
+    width: 50%;
+    padding: 10px 40px;
+    margin-bottom: 10px;
+
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    background-color: #fff;
+}
+.animecard button::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    
+    border-radius: 40px; 
+}
+.animecard button::before{
+    content: "";
+  background-image: linear-gradient(
+    45deg,
+    #FF0000,
+    #FF7300,
+    #FFFB00,
+    #48FF00,
+    #00FFD5,
+    #002BFF,
+    #FF00C8,
+    #FF0000
+);
+
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+   
+     height: calc(100% + 4px);
+     filter: blur(8px);
+   animation: glowing 20s linear infinite ;
+     transition:  opacity .3s ease-in-out;
+     opacity: 1;
+/* background-color: #002BFF; */
+}
+@keyframes glowing {
+    0%{
+        background-position: 0 0;
+    }
+     50%{
+        background-position: 400% 0;
+    }
+      100%{
+        background-position: 0 0;
+    }
+    
+}
+.animecard button:hover::before {
+    opacity: 1;
+}
+
+.animecard button:hover::after {
+    background-color: transparent;
+}
+
+.animecard button:active {
+    background-color: #000;
+}
+
+.animecardclanconinaer{
+    width: 70px;
+
+    height: 70px;
+    
+   background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    left: -5.5px;
+    top:-4px;
+    overflow: hidden;
+    padding: 3px;
+  
+  
+ 
+    
+}
+
+ .animecardclanconinaer img{
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+
+
+}
+/* animecard end */
+
+
+
+/* memberdetailsslidebarsection */
+.memberdetailsslidebarsection{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #121828;
+   
+    padding: 40px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.memberdatailslibarcardconatiner{
+    width: 100%;
+    height: 100%;
+   
+   
+
+}
+/* .wholecontentconatiner{
+    width: 1400px;
+    height: 1000px;
+      background-image: url(/images/memberdetailbar/Rectangle\ 70.png);
+  background-size: cover;
+  background-color:rgba(#000, #000, #000, .2);
+  
+  background-position: contain;
+
+    display: flex;
+} */
+
+.wholecontentconatiner {
+  position: relative;
+  width:1440px;
+  /*  1440px*/
+  height: 930px;
+  display: flex;
+  background-color: rgba(#000, #000, #000, 0.8); 
+  overflow: hidden; 
+  /* background-color: aqua; */
+  
+}
+
+.wholecontentconatiner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(/images/memberdetailbar/bg_pain.png);
+
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Change to control transparency of image */
+  z-index: 0; /* Behind content */
+  border-radius: 24px;
+       transition: all 4s ease-in-out;
+}
+
+.wholecontentconatiner > * {
+  position: relative;
+  z-index: 1; /* Ensure content appears above background */
+}
+
+.imageconatiner{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+          transition: all 0.5s ease;
+ 
+    /* background-color: black; */
+}
+.imageconatiner .imagesstart{
+       transition: all 0.5s ease;
+  width: 130px;
+  height: 70px;
+ /* position: relative;
+      box-shadow: 0px 0px 900px rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2) inset;
+    transform: scale(1.3);
+ z-index: 334; */
+ position: relative;
+   /* cursor: pointer; */
+
+}
+.imagesstart img{
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+     position: absolute;
+    object-fit: cover;
+      transition: all 0.5s ease;
+   
+     
+
+}
+.imagesstart{
+    position: absolute;
+      left: 20px;
+      /* z-index: 33; */
+        transition: all 0.5s ease;
+         /* background-color: #48FF00; */
+         /* background-color: #FF0000; */
+}
+.imagesstart .pain1{
+ 
+    /* click */
+    left: 70px;
+    top: 30px; 
+     width: 100px;
+     /* background-color: #48FF00; */
+    height: 200px;
+    z-index: 22;
+   
+   
+
+    /* normal */
+    /* top: 85px;
+    z-index: 33; */
+   
+    
+    /* background-color: white; */
+}
+
+
+.imagesstart .Daidara1{
+ 
+    /* click */
+    /* left: 70px;
+    top: 30px; 
+     width: 100px;
+    height: 200px; */
+   
+/* position: absolute; */
+    /* normal */
+    top: 90px;
+    left: 0px;
+    z-index: 33;
+   
+    
+    /* background-color: white; */
+}
+
+
+.imagesstart .Konan1{
+ 
+    /* click */
+    /* left: 70px;
+    top: 8px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 90px;
+    left: 0px;
+    z-index: 33;
+     transition: all 0.5s ease;
+  
+}
+
+
+.imagesstart .itachi1{
+ 
+    /* click */
+    /* left: 70px;
+    top: 8px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 80px;
+    left: -2px;
+    z-index: 33;
+      transition: all 0.5s ease;
+   
+    
+    /* background-color: white; */
+}
+
+.imagesstart .Zetsu1{
+ 
+    /* click */
+    /* left: 70px;
+    top: -14px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 80px;
+    left: 0px;
+    z-index: 33;
+   
+    
+    /* background-color: white; */
+}
+
+.imagesstart .Sasori1{
+ 
+    /* click */
+    /* left: 70px;
+    top: -26px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 80px;
+    left: 0px;
+    z-index: 33;
+   
+    
+    /* background-color: white; */
+}
+
+.imagesstart .Hidan1{
+ 
+    /* click */
+    /* left: 70px;
+    top: -55px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 70px;
+    left: -7px;
+    z-index: 33;
+   
+    
+    /* background-color: white; */
+}
+.imagesstart .kakazu1{
+ 
+    /* click */
+    /* left: 70px;
+    top: -55px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 60px;
+    left: 0px;
+    z-index: 33;
+   
+    
+    /* background-color: white; */
+}
+.imagesstart .kisame1{
+ 
+    /* click */
+    /* left: 70px;
+    top: -95px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 40px;
+    left: 0px;
+    z-index: 33;
+   
+    
+    /* background-color: white; */
+}
+
+
+.imagesstart .orachimaru1{
+ 
+    /* click */
+    /* left: 70px;
+    top: -65px; 
+     width: 100px;
+    height: 200px; */
+
+    /* normal */
+    top: 35px;
+    left: 0px;
+    z-index: 33;
+   
+    
+    /* background-color: white; */
+}
+/* .incontentconatiner{
+width: 85%;
+height: 100%;
+border: 2.5px solid rgb(77, 78, 77);
+/* background-color: crimson; */
+/* background-image: url(/images/carddesighn/Naruto/naruto.png);
+opacity: 0.3;
+position: relative;
+border-radius: 24px;
+
+}  */
+  .incontentconatiner{
+     width: 85%;
+  height: 100%;
+  position: relative;
+
+  /* pain */
+  clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 33.208%,0.116% 33.208%,0.128% 32.87%,0.163% 32.54%,0.22% 32.22%,0.298% 31.911%,0.397% 31.616%,0.516% 31.337%,0.653% 31.077%,0.808% 30.838%,0.98% 30.623%,1.169% 30.432%,1.2% 30.404%,4.655% 27.397%,4.655% 27.397%,4.869% 27.187%,5.065% 26.948%,5.242% 26.683%,5.398% 26.393%,5.533% 26.083%,5.646% 25.753%,5.735% 25.407%,5.8% 25.047%,5.84% 24.677%,5.854% 24.298%,5.854% 13.711%,5.854% 13.711%,5.842% 13.357%,5.807% 13.011%,5.75% 12.673%,5.672% 12.347%,5.573% 12.034%,5.454% 11.737%,5.316% 11.457%,5.16% 11.197%,4.987% 10.959%,4.797% 10.745%,4.765% 10.714%,1.101% 7.123%,1.101% 7.123%,0.924% 6.93%,0.762% 6.714%,0.617% 6.478%,0.488% 6.222%,0.378% 5.95%,0.285% 5.663%,0.212% 5.364%,0.159% 5.054%,0.127% 4.736%,0.116% 4.411%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% );
+  
+
+  /* daidara */
+  /* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 41.336%,0.116% 41.336%,0.128% 40.999%,0.162% 40.67%,0.219% 40.35%,0.297% 40.042%,0.396% 39.747%,0.514% 39.469%,0.651% 39.21%,0.805% 38.971%,0.977% 38.755%,1.164% 38.564%,1.195% 38.536%,4.661% 35.503%,4.661% 35.503%,4.874% 35.293%,5.069% 35.054%,5.244% 34.789%,5.4% 34.5%,5.534% 34.189%,5.647% 33.86%,5.736% 33.515%,5.8% 33.156%,5.84% 32.786%,5.854% 32.409%,5.854% 21.609%,5.854% 21.609%,5.843% 21.267%,5.81% 20.931%,5.757% 20.604%,5.683% 20.287%,5.59% 19.982%,5.479% 19.691%,5.349% 19.416%,5.202% 19.16%,5.038% 18.923%,4.859% 18.709%,4.798% 18.644%,1.071% 14.863%,1.071% 14.863%,0.899% 14.67%,0.742% 14.454%,0.601% 14.219%,0.477% 13.966%,0.369% 13.697%,0.28% 13.414%,0.209% 13.118%,0.158% 12.813%,0.126% 12.5%,0.116% 12.181%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+  
+
+  /* Konan */
+ 
+  /* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 49.671%,0.117% 49.566%,0.117% 49.566%,0.134% 49.255%,0.17% 48.95%,0.226% 48.654%,0.3% 48.368%,0.391% 48.094%,0.5% 47.835%,0.625% 47.59%,0.765% 47.364%,0.92% 47.156%,1.09% 46.97%,1.149% 46.913%,4.711% 43.617%,4.711% 43.617%,4.916% 43.406%,5.103% 43.167%,5.272% 42.903%,5.42% 42.617%,5.549% 42.311%,5.656% 41.988%,5.741% 41.65%,5.803% 41.299%,5.841% 40.938%,5.854% 40.569%,5.854% 29.751%,5.854% 29.751%,5.843% 29.413%,5.811% 29.08%,5.758% 28.756%,5.686% 28.441%,5.595% 28.138%,5.485% 27.849%,5.358% 27.576%,5.213% 27.32%,5.053% 27.084%,4.876% 26.87%,4.816% 26.805%,1.055% 22.914%,1.055% 22.914%,0.885% 22.72%,0.731% 22.505%,0.592% 22.271%,0.47% 22.019%,0.365% 21.751%,0.277% 21.47%,0.207% 21.178%,0.157% 20.875%,0.126% 20.565%,0.116% 20.249%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+
+  /* itachi */
+
+  /* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 59.293%,0.116% 59.293%,0.127% 58.959%,0.161% 58.633%,0.217% 58.316%,0.294% 58.01%,0.391% 57.718%,0.507% 57.442%,0.641% 57.183%,0.793% 56.945%,0.961% 56.729%,1.146% 56.538%,1.177% 56.51%,4.681% 53.372%,4.681% 53.372%,4.891% 53.162%,5.083% 52.923%,5.255% 52.658%,5.408% 52.37%,5.54% 52.062%,5.65% 51.735%,5.738% 51.392%,5.802% 51.037%,5.84% 50.671%,5.854% 50.296%,5.854% 39.251%,5.854% 39.251%,5.842% 38.893%,5.806% 38.542%,5.748% 38.201%,5.668% 37.871%,5.566% 37.555%,5.445% 37.256%,5.304% 36.974%,5.145% 36.713%,4.967% 36.475%,4.773% 36.262%,4.741% 36.23%,1.122% 32.774%,1.122% 32.774%,0.942% 32.582%,0.777% 32.366%,0.628% 32.129%,0.497% 31.872%,0.384% 31.597%,0.289% 31.308%,0.215% 31.006%,0.16% 30.692%,0.127% 30.37%,0.116% 30.042%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+  
+
+  /* Zetsu */
+  /* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 65.555%,0.116% 65.555%,0.13% 65.183%,0.173% 64.821%,0.242% 64.471%,0.336% 64.137%,0.454% 63.822%,0.596% 63.527%,0.759% 63.257%,0.942% 63.014%,1.144% 62.802%,1.364% 62.622%,1.401% 62.597%,4.433% 60.546%,4.433% 60.546%,4.683% 60.35%,4.913% 60.116%,5.122% 59.847%,5.307% 59.547%,5.468% 59.219%,5.603% 58.866%,5.71% 58.492%,5.789% 58.1%,5.837% 57.693%,5.854% 57.276%,5.854% 47.241%,5.854% 47.241%,5.842% 46.884%,5.806% 46.533%,5.748% 46.192%,5.668% 45.862%,5.566% 45.546%,5.445% 45.246%,5.304% 44.965%,5.145% 44.704%,4.967% 44.466%,4.773% 44.252%,4.741% 44.221%,1.122% 40.765%,1.122% 40.765%,0.942% 40.573%,0.777% 40.357%,0.628% 40.119%,0.497% 39.863%,0.384% 39.588%,0.289% 39.299%,0.215% 38.997%,0.16% 38.683%,0.127% 38.361%,0.116% 38.033%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+  
+  
+
+  
+  /* Sasori */
+
+  /* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 74.021%,0.116% 74.021%,0.129% 73.67%,0.166% 73.328%,0.228% 72.997%,0.312% 72.678%,0.418% 72.375%,0.545% 72.091%,0.691% 71.827%,0.857% 71.586%,1.04% 71.37%,1.24% 71.183%,1.273% 71.156%,4.574% 68.529%,4.574% 68.529%,4.801% 68.324%,5.01% 68.086%,5.198% 67.819%,5.365% 67.525%,5.509% 67.207%,5.63% 66.868%,5.726% 66.512%,5.796% 66.14%,5.839% 65.756%,5.854% 65.363%,5.854% 53.563%,5.854% 53.563%,5.84% 53.179%,5.799% 52.805%,5.732% 52.442%,5.641% 52.093%,5.526% 51.76%,5.388% 51.447%,5.229% 51.157%,5.049% 50.891%,4.85% 50.653%,4.632% 50.445%,4.596% 50.414%,1.253% 47.688%,1.253% 47.688%,1.051% 47.501%,0.866% 47.285%,0.698% 47.044%,0.55% 46.779%,0.421% 46.493%,0.314% 46.189%,0.229% 45.869%,0.167% 45.535%,0.129% 45.191%,0.116% 44.839%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+  
+
+  /* Hidan */
+
+  /* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 81.23%,0.116% 81.23%,0.129% 80.869%,0.169% 80.517%,0.234% 80.177%,0.324% 79.85%,0.436% 79.541%,0.57% 79.252%,0.724% 78.984%,0.898% 78.742%,1.091% 78.528%,1.301% 78.344%,1.336% 78.318%,4.505% 75.984%,4.505% 75.984%,4.744% 75.783%,4.963% 75.547%,5.161% 75.279%,5.337% 74.981%,5.489% 74.658%,5.617% 74.313%,5.718% 73.947%,5.793% 73.566%,5.838% 73.171%,5.854% 72.765%,5.854% 60.891%,5.854% 60.891%,5.841% 60.522%,5.803% 60.162%,5.741% 59.811%,5.657% 59.473%,5.55% 59.151%,5.422% 58.845%,5.273% 58.56%,5.105% 58.296%,4.919% 58.058%,4.715% 57.846%,4.681% 57.815%,1.177% 54.677%,1.177% 54.677%,0.987% 54.487%,0.813% 54.271%,0.657% 54.031%,0.519% 53.771%,0.399% 53.492%,0.3% 53.196%,0.22% 52.886%,0.163% 52.564%,0.128% 52.233%,0.116% 51.895%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+
+
+
+
+  /* kakasu */
+/* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,2.317% 99.829%,2.317% 99.829%,1.96% 99.786%,1.621% 99.663%,1.305% 99.466%,1.017% 99.201%,0.76% 98.876%,0.54% 98.497%,0.361% 98.07%,0.228% 97.604%,0.145% 97.103%,0.116% 96.575%,0.116% 91.429%,0.116% 91.429%,0.129% 91.079%,0.166% 90.737%,0.228% 90.405%,0.312% 90.087%,0.418% 89.784%,0.545% 89.499%,0.691% 89.235%,0.857% 88.994%,1.04% 88.779%,1.24% 88.592%,1.273% 88.565%,4.574% 85.938%,4.574% 85.938%,4.801% 85.732%,5.01% 85.495%,5.198% 85.227%,5.365% 84.933%,5.509% 84.616%,5.63% 84.277%,5.726% 83.92%,5.796% 83.549%,5.839% 83.165%,5.854% 82.772%,5.854% 71.931%,5.854% 71.931%,5.841% 71.568%,5.805% 71.212%,5.745% 70.867%,5.662% 70.533%,5.558% 70.213%,5.433% 69.911%,5.289% 69.627%,5.125% 69.365%,4.944% 69.126%,4.745% 68.914%,4.711% 68.883%,1.149% 65.587%,1.149% 65.587%,0.964% 65.396%,0.795% 65.18%,0.642% 64.941%,0.508% 64.682%,0.391% 64.406%,0.294% 64.113%,0.218% 63.807%,0.162% 63.489%,0.127% 63.163%,0.116% 62.829%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+
+
+/* Kisame */
+/* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.575%,99.884% 96.575%,99.855% 97.103%,99.772% 97.604%,99.639% 98.07%,99.46% 98.497%,99.24% 98.876%,98.983% 99.201%,98.695% 99.466%,98.379% 99.663%,98.04% 99.786%,97.683% 99.829%,1.789% 99.829%,1.789% 99.829%,1.517% 99.796%,1.26% 99.703%,1.02% 99.553%,0.801% 99.352%,0.606% 99.104%,0.439% 98.816%,0.303% 98.492%,0.201% 98.137%,0.138% 97.757%,0.116% 97.356%,0.116% 97.356%,0.125% 97.094%,0.153% 96.838%,0.198% 96.589%,0.26% 96.351%,0.338% 96.123%,0.432% 95.909%,0.54% 95.71%,0.662% 95.527%,0.798% 95.363%,0.945% 95.22%,0.996% 95.178%,4.574% 92.33%,4.574% 92.33%,4.801% 92.125%,5.01% 91.887%,5.198% 91.62%,5.365% 91.326%,5.509% 91.008%,5.63% 90.67%,5.726% 90.313%,5.796% 89.941%,5.839% 89.557%,5.854% 89.164%,5.854% 77.98%,5.854% 77.98%,5.841% 77.608%,5.802% 77.243%,5.739% 76.89%,5.653% 76.549%,5.544% 76.224%,5.413% 75.917%,5.262% 75.63%,5.092% 75.366%,4.902% 75.127%,4.695% 74.916%,4.661% 74.885%,1.195% 71.852%,1.195% 71.852%,1.002% 71.662%,0.826% 71.446%,0.667% 71.206%,0.526% 70.945%,0.405% 70.664%,0.303% 70.366%,0.223% 70.053%,0.164% 69.729%,0.128% 69.394%,0.116% 69.052%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+
+
+/* Orachimaru */
+/* clip-path: polygon( 2.317% 0.171%,97.683% 0.171%,97.683% 0.171%,98.04% 0.214%,98.379% 0.337%,98.695% 0.534%,98.983% 0.799%,99.24% 1.124%,99.46% 1.503%,99.639% 1.93%,99.772% 2.396%,99.855% 2.897%,99.884% 3.425%,99.884% 96.563%,99.884% 96.563%,99.855% 97.092%,99.771% 97.594%,99.637% 98.061%,99.458% 98.488%,99.237% 98.867%,98.979% 99.193%,98.69% 99.457%,98.373% 99.653%,98.033% 99.775%,97.675% 99.816%,8.046% 99.328%,8.046% 99.328%,7.69% 99.283%,7.353% 99.159%,7.038% 98.961%,6.751% 98.696%,6.495% 98.37%,6.276% 97.992%,6.098% 97.566%,5.965% 97.1%,5.882% 96.601%,5.854% 96.074%,5.854% 88.163%,5.854% 88.163%,5.841% 87.796%,5.804% 87.437%,5.742% 87.088%,5.658% 86.752%,5.553% 86.43%,5.426% 86.126%,5.278% 85.841%,5.112% 85.578%,4.927% 85.339%,4.725% 85.127%,4.691% 85.096%,1.167% 81.906%,1.167% 81.906%,0.979% 81.715%,0.807% 81.499%,0.652% 81.26%,0.515% 81%,0.397% 80.722%,0.298% 80.427%,0.219% 80.118%,0.162% 79.798%,0.128% 79.468%,0.116% 79.132%,0.116% 3.425%,0.116% 3.425%,0.145% 2.897%,0.228% 2.396%,0.361% 1.93%,0.54% 1.503%,0.76% 1.124%,1.017% 0.799%,1.305% 0.534%,1.621% 0.337%,1.96% 0.214%,2.317% 0.171% ); */
+
+  border: 5px solid red;
+ 
+  border-radius: 24px;
+  overflow: hidden;
+      box-shadow: 0px 0px 400px rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2) inset;
+     border: 6px solid #66666600;
+
+     z-index: 2
+  }
+  .incontentconatiner::before{
+     content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: #9705ec; */
+  /* background-image: url(/images/carddesighn/Naruto/naruto.png); */
+  background-size: cover;
+  background-position: center;
+  
+  /* opacity: 0.5; */
+  z-index: 0;
+    transition: all 0.5s ease;
+  }
+
+
+/* content */
+.incontentconatiner .content{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 24px;
+
+     border: 2.5px solid #4B5365 ;
+       border: 3px solid #66666600;
+  z-index: 1;
+  color: white; /* or white depending on the background */
+  padding: 1em;
+  position: relative;
+    transition: all 0.5s ease;
+
+
+
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.1);
+border-radius: 16px;
+/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+backdrop-filter: blur(7px);
+-webkit-backdrop-filter: blur(7px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+.content h1 {
+    /* position: absolute; */
+    /* top: 40px; */
+    padding-left: 100px;
+    padding-top: 40px;
+
+    font-size: 40px;
+    /* left: 110px; */
+    font-family: 'Titles', sans-serif;
+    /* opacity: 1; */
+          transition: opacity 0.3s ease;
+          z-index: 22;
+          background: url(/images/logo.png) center;
+          background-size: cover;
+          
+          /* background-color: #00FFD5; */
+          background-clip: text;
+          color: transparent;
+          animation: colourchange 3s linear infinite;
+          
+
+}
+@keyframes colourchange {
+  to{
+    background-position-x: -534px;
+  }
+  
+}
+
+
+
+.informationconetnt{
+    width: 70%;
+    
+     height: 100vh; 
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+padding-left: 100px;
+padding-top: 60px;
+    /* padding: 20px; */
+    /* position: absolute; */
+     
+    /* top: 100px; */
+    /* left: 110px; */
+    overflow-y: auto;
+     /* background-color: #002BFF; */
+     /* padding-top: 380px; */
+      scrollbar-width: none;
+
+
+
+
+
+     /* changecode */
+
+
+      /*    width: 70%;
+    
+    display: flex;
+    gap: 30px;padding: 20px;
+    position: absolute;
+    overflow-y: hidden;
+    top: 100px;
+    left: 110px; */
+}
+.informationconetnt ul{
+    display: flex;
+    flex-direction: column;
+  justify-content: center;  
+  align-content: center; 
+  gap: 25px;
+  
+  padding-top: 20px;
+   /* transition: opacity 0.5s ease;
+     transition: all 0.5s ease; */
+}
+
+.informationconetnt ul li{
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 2px;
+        font-family: 'membercontentbarfont', sans-serif;
+         transition: opacity 0.3s ease;
+        
+}
+
+
+.informationconetntimgconatinmer{
+    width: 30%;
+    height: 100%;
+  transition: all 0.5s ease;
+}
+
+.informationconetntimgconatinmer .memcimgcontainer{
+    width: 250px;
+    position: absolute;
+    height: 600px;
+    top: 150px;
+     
+    right: 10px;
+         transition: opacity 0.3s ease;
+
+}
+ .informationconetntimgconatinmer .memcimgcontainer img{
+    width: 100%;
+    height: 100%;
+      
+          transition: opacity 0.3s ease;
+  /* opacity: 1; */
+    /* filter: drop-shadow(-20px 0px 10px black); */
+
+
+ }
+    
+
+ /* Responsive{ */
+ @media (max-width: 1400px) {
+
+.memberdetailsslidebarsection{
+display: none;
+}
+ }
+
+
+
+
+
+
+
+ /* Addd Member bar Content start */
+.memberboxbarsectioin2{
+    width: 100%;
+    min-height: 80vh;
+   background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('/images/memberdetailbar/Rectangle 70.png') center center / cover no-repeat;
+  
+   background-position: center;
+   background-size: cover;
+   /* background-attachment: fixed; */
+   background-repeat: no-repeat;
+     
+    padding: 10px;
+    
+    
+   
+   display: flex !important;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   
+   
+}
+.memberboxbarsectioin2conatinerAll{
+    width: 90%;
+    height: 100%;
+       border-radius: 13px;
+   
+     overflow: hidden;
+    position: relative;
+  
+}
+.memberboxbarsectioin2 h1{
+    font-size: 35px;
+    margin: 10px auto;
+     font-family: 'Titles', sans-serif;
+     color: white;
+    
+}
+.memberboxbarsectioin2conatiner{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+ 
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.1);
+
+/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+backdrop-filter: blur(7px);
+-webkit-backdrop-filter: blur(7px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+ 
+     color: white;
+    
+}
+.memberboxbarsectioin2content{
+    width: 100%;
+   
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: start;
+    gap: 20px;
+    padding: 10px;
+    /* margin-top: 10px; */
+    /* overflow-y: auto; */
+    
+   
+}
+.memberboxbarsectioin2content ul{
+
+
+      display: flex;
+  justify-content: flex-start; 
+  flex-direction: column;
+  gap: 50px;
+  padding: 10px 10px 15px 10px;
+  margin: 0; 
+  height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+    font-family: 'membercontentbarfont', sans-serif;
+    font-size: 18px !important;
+    padding-left: 20px;
+}
+
+
+.memberboxbarsection2content ul::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* menubar */
+
+.membermenubarcontainer{
+    width: 200px;
+ 
+    height: 100%;
+
+
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* flex-direction: column; */
+ top: 0;
+right: 0;
+   
+   transform: translateX(100%);
+   transition: all 0.3s ease-out;
+   /* z-index: 12; */
+ background-color: black;
+
+}
+.iconspanclose{
+   
+    display: block;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+    z-index: 45;
+
+}
+.iconspanclose i{
+    font-size: 45px;
+    
+    /* position: absolute;
+    left: 5%;
+    top: 5%; */
+
+    
+}
+.imagescontaimemebr{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-right: 40px;
+  
+}
+.imagesss{
+    width: 150px;
+    height: 150px;
+   
+    gap: 15px;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+}
+
+
+.imagesss h1{
+font-size: 25px;
+margin-top: -20px;
+padding-left: 45px;
+
+          
+
+
+}
+
+.memberboxbarsectioin2content #namemeber2{
+  font-size: 45px;
+  width: 100%;
+  padding-left: 100px;
+  background-color: red;
+  background: url(/images/logo.png) center;
+          background-size: cover;
+          
+          /* background-color: #00FFD5; */
+          background-clip: text;
+          color: transparent;
+          animation: colourchanges 3s linear infinite;
+}
+
+@keyframes colourchanges {
+  to{
+    background-position-x: -234px;
+  }
+  
+}
+.imagesss img{
+    width: 100%;
+    height: 100%;
+    margin: 14px;
+    cursor: pointer;
+    
+}
+.iconspanmenu{
+position: absolute;
+top: 3%;
+right: 5%;
+cursor: pointer;
+}
+.iconspanmenu i{
+ font-size: 45px;
+}
+
+
+/* Resposibve */
+
+
+ @media (min-width: 300px) and (max-width: 420px) {
+.memberboxbarsectioin2 {
+padding: 10px;
+}
+  .memberboxbarsectioin2conatiner {
+padding: 0px;
+  }
+
+  
+  .memberboxbarsectioin2content{
+padding: 5px;
+padding-left: 25px;
+  }
+  .memberboxbarsectioin2conatinerAll{
+    width: 100%;}
+
+    .memberboxbarsectioin2content ul li{
+    font-size: 20px;
+}
+
+.memberboxbarsectioin2 h1{
+font-size: 25px;
+
+}
+
+ }
+  @media (min-width: 420px) and (max-width: 600px) {
+.memberboxbarsectioin2 {
+padding: 10px;
+}
+  .memberboxbarsectioin2conatiner {
+padding: 0px;
+  }
+
+  
+  .memberboxbarsectioin2content{
+padding: 5px;
+padding-left: 25px;
+  }
+  .memberboxbarsectioin2conatinerAll{
+    width: 100%;}
+
+    .memberboxbarsectioin2content ul li{
+    font-size: 20px;
+}
+
+ }
+  @media (min-width: 600px) and (max-width: 800px) {
+.memberboxbarsectioin2 {
+padding: 10px;
+}
+  .memberboxbarsectioin2conatiner {
+padding: 0px;
+  }
+
+  
+  .memberboxbarsectioin2content{
+padding: 5px;
+padding-left: 25px;
+  }
+  .memberboxbarsectioin2conatinerAll{
+    width: 90%;}
+
+    .memberboxbarsectioin2content ul li{
+    font-size: 20px;
+}
+
+ }
+
+
+ @media (min-width: 300px) and (max-width: 1400px) {
+
+  .memberboxbarsectioin2{
+display: block;
+
+  }
+
+
+
+ }
+  @media (min-width: 1400px) and   (max-width: 2100px) {
+.memberboxbarsectioin2{
+display: none !important;
+}
+  }
+
+ /* Addd Member bar Content End */
+
+
+
+
+
+
+/* Conatect start */
+.contactsection{
+    width: 100%;
+    min-height: 60vh;
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+
+}
+.contactsectioncontainer{
+   width: 50%;
+   max-width: 1000px;
+    height: 670px;
+    /* text-align: center; */
+    display: flex;
+     justify-content: center; 
+    align-items: center; 
+flex-direction: column;
+gap: 20px;
+
+}
+
+.contactsection h1{
+    font-size: 50px;
+    /* margin-top: -80px; */
+    margin: auto;
+    font-family: 'Titles', sans-serif;
+}
+
+form{
+    width: 100%;
+    /* width: 480px; */
+    height: 15px;
+    padding: 17px 27px;
+    display: flex;
+    justify-content: center;align-self: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+input,textarea{
+width: 100%;
+padding: 17px 27px;
+border-radius: 15px;
+outline: none;
+background-color:#2b3952 ;
+border: none;
+color: gray;
+font-size: 18px;
+resize: none;
+}
+textarea{
+    padding: 10px 20px 80px;
+}
+form button{
+    /* width: 80%; */
+    width: 182px;
+    height: 46px;
+    padding: 10px;
+    border-radius: 13px;
+    border: none;
+    text-align: center;
+    background-color: rgb(226, 15, 15);
+    box-shadow: 0px 0px 80px red inset;
+    font-family: 'Titles', sans-serif;
+    font-size: 18px;
+    /* margin: auto; */
+}
+
+
+ @media (min-width:320px) and (max-width:480px){
+  .contactsectioncontainer{
+width: 400px;
+  }
+form{
+   width: 100%
+    /* width: 480px; */
+
+ }
+}
+ @media (min-width:480px) and (max-width:600px){
+
+ .contactsectioncontainer{
+width: 70%;
+  }
+
+ }
+
+  @media (min-width:600px) and (max-width:800px){
+
+ .contactsectioncontainer{
+width: 80%;
+  }
+
+  }
+/* Conatect end */
+
+
+
+
+/* footer start */
+.footer{
+    width: 100%;
+min-height: 80px;
+padding: 30px 20px ;
+
+background-color:#2b3952 ;
+}
+.footerconatiner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+/* fooetr end */
+
+
+

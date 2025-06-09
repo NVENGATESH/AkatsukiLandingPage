@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Margarine&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Titles';  /* 1. Give it a custom name */
+    src: url('/font/go3v2.ttf') format('truetype');  /* 2. Path to your font */
+    font-weight: 800;  /* 3. You can also define font weight */
+    font-style: normal;   /* 4. And font style */
+  }
+
+@font-face {
+    font-family: 'membercontentbarfont';  /* 1. Give it a custom name */
+    src: url('/font/JMH\ Typewriter.ttf') format('truetype');  /* 2. Path to your font */
+    font-weight: 0;  /* 3. You can also define font weight */
+    font-style: normal;   /* 4. And font style */
+  }
+
+:root{
+
+ /* ------font family------ */
+ --ff-primery:"Roboto", sans-serif;
+ --ff-secondary:"Inter", sans-serif;
+ --ff-desighn:"Satisfy", cursive;
+ --ff-brand:"Margarine", sans-serif;
+ 
+
+}
+
+a{
+    text-decoration: none;
+}
+p{
+    font-family: var(--ff-desighn);
+}
+
+/* body{
+    font-family: 'Titles', sans-serif;
+} */
+
+
+
+
+
+
+/* Nav bar start */
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .5rem 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    background-color: #121828;
+}
+
+
+.navlogoconstructor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navlogoconstructor  img{
+    width: 60px;
+    height: 60px;
+     
+}
+
+.navlogoconstructor .logoname{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Titles', sans-serif;
+}
+
+
+
+.navbar a{
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+#check{
+    display: none;
+}
+
+.icons {
+    font-size: 2.5rem;
+    position: absolute;
+    right: 5%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+/* Nav Bar Responsive */
+
+@media (max-width:992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width:768px){
+    .icons{
+        display: inline-flex;
+    }
+    #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+       
+        
+    }
+
+    #check:checked~.navbar{
+        height: 17.7rem;
+    }
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        opacity: 0;
+        transform: translatey(-50px);
+        transition: .3s ease;
+      
+    
+    }
+
+    #check:checked~.navbar a{
+        opacity: 1;
+        transform: translatey(0px);
+        transition-delay: calc(.15s * var(--i));
+    }
+}
+
+
+/* navabar end */
+
+
+
+/* homeSection */
+
+.homeSection{
+    width: 100%;
+    min-height: 100vh;
+    
+    background: repeating-linear-gradient(to right,#D56363,#A72424 10%);
+    
+}
+.homeSectionconatiner{
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   background-color: #a90c0c1a;
+
+}
+
+.homeSectionconatiner h1{
+ font-size: 131px;
+ font-family: 'Titles', sans-serif;
+}
+
+.memberimages{
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    /* gap: 30px; */
+    position: relative;
+
+}
+.item{
+    width: 342px;
+    height: 678px;
+    position: absolute;
+  
+}
+.item1{
+  top: -40%;
+  left: 1%;
+}
+
+.item2{
+  top: 0%;
+  left: 50%;
+}

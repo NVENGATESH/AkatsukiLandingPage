@@ -312,7 +312,7 @@ color: white;
   @media (min-width:320px) and (max-width:480px){
     .homecontentconatiner{
 width: 95%;
-top: 240px;
+top: 280px;
     display: flex;
     flex-direction: column; 
     gap: 30px;
@@ -993,13 +993,15 @@ z-index: 2;
 }
 .galery6 img{
 
-object-fit: contain;
+object-fit: cover;
 }
 .galery7 img{
 
-object-fit: contain;
+object-fit: cover;
 
 }
+
+
 .galery1  {
      grid-area: galery1s;
     
@@ -2275,7 +2277,7 @@ display: none !important;
 /* Conatect start */
 .contactsection{
     width: 100%;
-    min-height: 60vh;
+    height:   80vh;
     background-color: black;
     color: white;
     padding: 40px 20px;

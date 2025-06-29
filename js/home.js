@@ -450,3 +450,15 @@ function changecontentmembarebar(name1) {
     });
   }, 300);
 }
+
+
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 120,        // how far from the viewport the animation triggers (in px)
+       // animation duration (in ms)
+    easing: 'ease-in-out', 
+  });
+
+
+
